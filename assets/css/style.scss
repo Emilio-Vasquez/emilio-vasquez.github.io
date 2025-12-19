@@ -1,0 +1,20 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Fix sidebar/footer overlap on shorter viewports by keeping footer in normal flow
+   and giving the header room to breathe. */
+header {
+  position: relative; /* was fixed in theme */
+}
+
+footer {
+  position: relative; /* prevent overlay */
+}
+
+/* Keep the left profile image from consuming the whole sidebar */
+header img {
+  max-width: 220px;
+  height: auto;
+}
