@@ -6,7 +6,12 @@
 /* Fix sidebar/footer overlap on shorter viewports by keeping footer in normal flow
    and giving the header room to breathe. */
 header {
-  padding-bottom: 60px !important;
+  position: sticky !important;
+  top: 20px;
+  height: calc(100vh - 40px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* --- Fix footer overlay blocking clicks --- */
@@ -26,4 +31,10 @@ footer, footer * {
 header img {
   max-width: 220px;
   height: auto;
+}
+
+/* Push the footer to the bottom of the sidebar */
+header > footer {
+  margin-top: auto;
+  position: static !important;
 }
