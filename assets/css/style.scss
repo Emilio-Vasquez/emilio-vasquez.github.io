@@ -6,11 +6,20 @@
 /* Fix sidebar/footer overlap on shorter viewports by keeping footer in normal flow
    and giving the header room to breathe. */
 header {
-  position: relative; /* was fixed in theme */
+  padding-bottom: 60px !important;
 }
 
+/* --- Fix footer overlay blocking clicks --- */
 footer {
-  position: relative; /* prevent overlay */
+  position: static !important;
+  float: none !important;
+  width: auto !important;
+  margin-top: 20px !important;
+}
+
+/* In case the theme still positions it over content on some screens */
+footer, footer * {
+  pointer-events: none;
 }
 
 /* Keep the left profile image from consuming the whole sidebar */
